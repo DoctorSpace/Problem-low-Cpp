@@ -1,35 +1,32 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
+
+/*
+Условие: необходимо найти числа которые входят в промежуток от A и до B (но сами не учитываются),
+и притом могут делиться на 3 и на 2 или только на 3 или 5, но никак не могут если есть 2 и 5.
+*/
 
 int main() {
 
 	int count, app = 0;
-	const int n = 2;
-	int A[n];
+	
+	int A, B;
+	cin >> A >> B;
 
-	for (int i = 0; i < n; i++) {
-		cin >> A[i];
-	}
+	A++;
+	B--;
 
-	A[0]++;
-	A[1]--;
-
-	while (A[0] <= A[1]) {
-		if (A[0] % 5 != 0 or A[0] % 2 != 0) {
-
-			if (A[0] % 3 == 0 and A[0] % 5 == 0) {
+	while (A <= B) {
+		if (A % 5 != 0 or A % 2 != 0) {
+			if (A % 3 == 0 and A % 5 == 0) {
 				app++;
 			}
-
-			if (A[0] % 3 == 0 and A[0] % 2 == 0) {
+			if (A % 3 == 0 and A % 2 == 0) {
 				app++;
 			}
 		}
-
-		A[0]++;
+		A++;
 	}
-
 	cout << app;
-
 } 
