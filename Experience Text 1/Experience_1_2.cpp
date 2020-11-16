@@ -2,26 +2,27 @@
 
 using namespace std;
 
-
+/*
+Необходимо перевести из системы счисления (1 < N < 10) в 10-тичную систему
+*/
 
 int main(){
 
+	int notation = 0;  	//Система счисления
+	int Number, n1, Result = 0,Power = 0;
 
-	int M = 0, L = 0; // степень
-	int N, n1, P = 0;
-
-	cin >> M;
-	cin >> N;
+	cin >> notation; 	//Вводим систему счисления(Пример: 2)
+	cin >> Number;   	//Вводим 12 знаков (Пример: 00001111101)
 
 
 	while (N > 0) {
 
-		n1 = N % 10;
-		N = N / 10;
+		n1 = Number % 10;
+		Number = Number / 10;
 
-		P = n1 * pow(M, L) + P;
-		L++;
+		Result = n1 * pow(notation, Power) + Result;
+		Power++;
 	}
 
-	cout << P;
+	cout << Result;		//Результат (Пример: 253)
 } 
