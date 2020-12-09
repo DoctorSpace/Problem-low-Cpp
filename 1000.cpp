@@ -15,7 +15,7 @@ int main()
 
     for (int i = 0; i < 100; i++) {
 
-        file_out << i << ". Денис лох" << endl;
+        file_out << i << ". ТЕКСТ" << endl;
 
     }
 }
